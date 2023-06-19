@@ -21,7 +21,6 @@ class Contract(models.Model):
 
     @api.model
     def _get_values_create_split_contract(self, split_wizard):
-        self.ensure_one()
         return {
             "name": self._get_contract_split_name(split_wizard),
             "partner_id": split_wizard.partner_id.id,
