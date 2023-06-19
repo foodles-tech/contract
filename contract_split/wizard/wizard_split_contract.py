@@ -8,6 +8,7 @@ from odoo.tools import float_compare
 
 class SplitContract(models.TransientModel):
     _name = "split.contract"
+    _description = "Contract split transient model"
 
     split_line_ids = fields.One2many(
         comodel_name="split.contract.line", inverse_name="split_contract_id"
@@ -77,6 +78,7 @@ class SplitContract(models.TransientModel):
 
 class SplitContractLine(models.TransientModel):
     _name = "split.contract.line"
+    _description = "Contract split line transient model"
 
     split_contract_id = fields.Many2one(comodel_name="split.contract")
     original_contract_line_id = fields.Many2one(comodel_name="contract.line")
