@@ -167,23 +167,6 @@ class ContractContract(models.Model):
             res = super(ContractContract, self).write(vals)
         return res
 
-    def cron_generate_invoices_manually(self, date=None, domain=None):
-        if date is None:
-            date = fields.Date.today()
-
-        if domain is None:
-            domain = []
-
-        domain = expression.AND(
-            [domain, self._get_contracts_to_invoice_domain(date_ref=date)]
-        )
-
-        contracts = self.search(domain)
-        for contract in contracts:
-            contract.generate_invoices_manually(date=date)
-
-        return True
-
     def generate_invoices_manually(self, date=None):
         if date is None:
             date = fields.Date.today()
