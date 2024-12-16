@@ -1,1 +1,2 @@
 # See https://github.com/OCA/odoo-community.org/blob/master/website/Contribution/CONTRIBUTING.rst#oca_dependencies-txt
+contract https://github.com/OCA/contract dixmit:14.0-contract-improve
