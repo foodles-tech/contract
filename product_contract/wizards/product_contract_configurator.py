@@ -24,7 +24,9 @@ class ProductContractConfigurator(models.TransientModel):
         string="Invoice Every",
         help="Invoice every (Days/Week/Month/Year)",
     )
-    recurring_rule_type = fields.Selection(related="product_id.recurring_rule_type")
+    recurring_rule_type = fields.Selection(
+        related="product_id.recurring_rule_type", string="Invoice Every type"
+    )
     recurring_invoicing_type = fields.Selection(
         related="product_id.recurring_invoicing_type"
     )
